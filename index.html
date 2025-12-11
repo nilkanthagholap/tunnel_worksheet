@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigating Pressure Waves in Railway Tunnels - Interactive Student Worksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            background: #ecf0f1;
+        }
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-family: inherit;
+            resize: vertical;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .image-placeholder {
+            text-align: center;
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+        #submit-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 0 0 4px 4px;
+            margin-bottom: 10px;
+        }
+        .colab-link {
+            display: inline-block;
+            background: #4285f4;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .colab-link:hover {
+            background: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teaching Module: Seeing Sound Waves in a Train Tunnel</h1>
+        <h2>Module Title: Investigating Pressure Waves in Railway Tunnels Using Mobile-Based Sensors</h2>
+
+        <h3>Learning Objectives:</h3>
+        <p>By the end of this module, students will be able to:</p>
+        <ol>
+            <li>Explain how a train acts like a piston to create pressure waves (compressions and rarefactions).</li>
+            <li>Use a smartphone sensor (barometer) and the Phyphox app to collect real-time graphical data.</li>
+            <li>Analyze a pressure vs. time graph to identify key wave features: <strong>forward compression wave</strong>, <strong>and reflected pressure waves</strong>.</li>
+            <li>Relate the physical properties of the tunnel and train speed to the resulting pressure profile.</li>
+        </ol>
+
+        <div class="section">
+            <h3>1: Conceptual Background (What are we looking for?)</h3>
+            <h4>Pre-Activity Questions (Inquiry Starters):</h4>
+            <div class="question">
+                <strong>1.</strong> When you are travelling on a train and the train enters a long tunnel, you sometimes feel a sensation in your ears, often called an "ear pop." What causes this physical feeling?
+                <br><textarea id="q1" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>2.</strong> Have you ever felt similar sensation when you travel by a car through a tunnel?
+                <br><textarea id="q2" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>3.</strong> Imagine the train entering the tunnel. What happens to the air in front of the train?
+                <br><textarea id="q3" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>4.</strong> Since the tunnel is like a <strong>long pipe</strong>, what might happen to the compression wave when it reaches the end of the tunnel?
+                <br><textarea id="q4" placeholder="Your answer here..."></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>2: Data Acquisition (Using Phyphox)</h3>
+            <p><strong>Tools Required:</strong> Smartphone with a barometric sensor, Phyphox App.</p>
+
+            <h4>A. Setting up Phyphox:</h4>
+            <ol>
+                <li>Install the Phyphox app on the smartphone.</li>
+                <li>Open the app and select the <strong>Pressure sensor</strong>.</li>
+                <li>Ensure the settings are configured to record pressure (in hPa or Pascals) over time.</li>
+            </ol>
+
+            <div class="image-placeholder">
+                <!-- Placeholder for Phyphox app screenshot -->
+                <p>[Image: Phyphox app interface showing Pressure sensor selection]</p>
+                <img src="phyphox-pressure-sensor.png" alt="Phyphox Pressure Sensor Setup" style="max-width: 300px;">
+            </div>
+
+            <h4>B. Data Recording Steps:</h4>
+            <ol>
+                <li>The student (or the teacher, if doing a demo) should be positioned inside the train coach (preferably near a window, or at a fixed location).</li>
+                <li><strong>Start Recording</strong>: press the record/play button on the Phyphox app when you want to start the recording.</li>
+                <li><strong>Manual Logging</strong>: While the data is recording, note down the <strong>manual timestamps</strong> for when the train completely enters the tunnel and when it completely exits the tunnel. (This helps correlate the data points with the physical event; tunnel entry and exit times can be recovered from the data recorded on phyphox later by identifying the time of pressure rise and pressure normalisation after train exit).<br>You can also use speedometer app on separate device to measure the average speed of the train when it enters the tunnel. this will help you correlate the data to other parameters in the observations.</li>
+                <li><strong>End Recording:</strong> Stop the recording process once the train has exited the tunnel and the pressure returns to normal.</li>
+                <li><strong>Save Data:</strong> (click 3 dots on the up-right corner of the recording window to see the export option: Export the pressure (hPa) vs. time (s) data, typically as an Excel or a CSV file, for later analysis.</li>
+            </ol>
+
+            <div class="image-placeholder">
+                <!-- Placeholder for export screenshot -->
+                <p>[Image: Phyphox export options]</p>
+                <img src="phyphox-export.png" alt="Phyphox Data Export" style="max-width: 300px;">
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>3: Data Analysis (Plotting and Cleaning)</h3>
+            <p><strong>Goal:</strong> Transform the raw numbers into a meaningful visual graph.</p>
+            <ol>
+                <li><strong>Preparation:</strong> Import the saved Excel/CSV data file into the following Python notebook. This plots the Data and helps you interact with the data.
+                    <br><a href="https://colab.research.google.com/drive/18pBzuPMbbUpZ_WALw5Udn7T7cBxipQ7b?usp=sharing" class="colab-link" target="_blank">[Open In Colab]</a>
+                </li>
+                <li><strong>Initial Plotting:</strong> Plot the raw data of <strong>Pressure (Y-axis)</strong> versus <strong>Time (X-axis)</strong>.</li>
+                <li>You can interactively browse through the graph produced so use it to identify peaks and max and min pressure of peaks.</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3>4: Data Interpretation and Inquiry</h3>
+            <h4>Analysis Questions:</h4>
+            <div class="question">
+                <strong>1. Identifying the Initial Event:</strong> Look at the start of the graph. Where does the pressure first rise sharply? This steep rise is the <strong>Forward compression wave</strong>. Based on the theory, what caused this rapid pressure increase?
+                <br><textarea id="q5" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>2. Compression and Rarefaction:</strong> Identify the highest pressure point on the graph. This represents the peak of the compression. Next, identify the lowest pressure point (the deepest dip). This negative pressure region corresponds to the <strong>Backward expansion wave</strong> (rarefaction).
+                <br><textarea id="q6" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>3. Echoes in the Data:</strong> Look at the smaller peaks and valleys that occur between the major compression and rarefaction. These represent the <strong>Reflected pressure waves</strong>. How does this observation confirm the idea that the tunnel acts like a long pipe where waves can reflect (like echoes)?
+                <br><textarea id="q7" placeholder="Your answer here..."></textarea>
+            </div>
+
+            <div class="image-placeholder">
+                <!-- Placeholder for pressure wave graph -->
+                <p>[Image: Graph showing forward compression wave, reflected waves, and rarefaction]</p>
+                <img src="pressure-wave-graph.png" alt="Pressure vs Time Graph" style="max-width: 100%;">
+            </div>
+
+            <div class="question">
+                <strong>4. Effect of Speed (Connecting Data to Variables):</strong> Compare the graphs from a slow train entry versus a fast train entry (if multiple datasets are available). The sources found that <strong>steeper pressure rises correlated with higher entry speeds</strong>. Why would a faster train cause the pressure to rise more steeply?
+                <br><textarea id="q8" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>5. Effect of Length:</strong> The sources noted that <strong>longer tunnels showed a broader pressure plateau</strong>. If the flat, high-pressure section of the graph is the "plateau," how could you use the duration of this plateau to estimate the tunnel's length?
+                <br><textarea id="q9" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>6. The Open Window Observations:</strong> The study found that similar pressure variations were observed <strong>in non-AC coaches with open windows and high speed</strong>. The pressure change in these train speed below ~60kmph was observed to be minimal. Why did the pressure not change much in these coaches?
+                <br><textarea id="q10" placeholder="Your answer here..."></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>6: Conclusion and Extension</h3>
+            <div class="question">
+                <strong>1. Summary:</strong> Write a short paragraph explaining how measuring pressure changes in a train tunnel helped you understand <strong>longitudinal pressure waves</strong> (sound waves) better than just reading about them in a textbook. (Focus on the finding that the waveforms align well with predictions from wave theory, showing how theory matches reality.)
+                <br><textarea id="q11" placeholder="Your answer here..."></textarea>
+            </div>
+            <div class="question">
+                <strong>2. Extension:</strong> How could this experiment be improved? What other variables (like coach type or atmospheric temperature) might affect the pressure profile?
+                <br><textarea id="q12" placeholder="Your answer here..."></textarea>
+            </div>
+        </div>
+
+        <div id="submit-section">
+            <button onclick="submitAnswers()">Submit and Download My Answers</button>
+            <p id="status"></p>
+        </div>
+    </div>
+
+    <script>
+        function submitAnswers() {
+            const answers = {
+                studentName: prompt("Enter your name for reference:"),
+                timestamp: new Date().toISOString(),
+                q1: document.getElementById('q1').value,
+                q2: document.getElementById('q2').value,
+                q3: document.getElementById('q3').value,
+                q4: document.getElementById('q4').value,
+                q5: document.getElementById('q5').value,
+                q6: document.getElementById('q6').value,
+                q7: document.getElementById('q7').value,
+                q8: document.getElementById('q8').value,
+                q9: document.getElementById('q9').value,
+                q10: document.getElementById('q10').value,
+                q11: document.getElementById('q11').value,
+                q12: document.getElementById('q12').value
+            };
+
+            // Save to localStorage (persists across sessions on the same device)
+            let savedAnswers = JSON.parse(localStorage.getItem('studentAnswers') || '[]');
+            savedAnswers.push(answers);
+            localStorage.setItem('studentAnswers', JSON.stringify(savedAnswers));
+
+            // Generate downloadable file
+            const blob = new Blob([JSON.stringify(answers, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `student-answers-${answers.timestamp}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+
+            document.getElementById('status').innerHTML = '<p style="color: green;">Answers submitted and downloaded! Check localStorage for all saved sessions.</p>';
+        }
+    </script>
+</body>
+</html>
